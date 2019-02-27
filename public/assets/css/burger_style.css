@@ -1,0 +1,49 @@
+body {
+    background-color: #910506;
+    background-image: url("/assets/images/back_rps_old.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: rgb(236, 236, 236);
+    text-shadow: 1px 1px 3px #000000;
+    text-align: center;
+    font-family: 'Stylish', sans-serif;
+    font-size: 1.5rem;
+}
+
+#logoSection {
+    margin-top: 50px;
+    margin-bottom: -35px;
+}
+
+li {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    line-height: 15px;
+}
+
+.card {
+    /* border: none; */
+    background-color: #0000002f;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#welcomeSection,
+#userSection,
+#statsSection,
+#viewerSection,
+#playerSection {
+    border: none;
+    background-color: #24fd5300;
+}
+
+.oponentChoice1,
+.oponentChoice2 {
+    margin-top: 190px;
+
+}
+
+@media screen and (max-width: 768px) {}

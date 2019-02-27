@@ -22,6 +22,11 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
+// Static directory
+app.use(express.static("public"));
+console.log(__dirname);
+//app.use(express.static(path.join(__dirname, 'public')));
+
 // ==============================================================================
 // HANDLEBARS CONFIGURATION
 // This sets up the basic properties for handlebars
@@ -34,46 +39,15 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-// ==============================================================================
-// MYSQL CONFIGURATION
-// This sets up the MYSQL connection
-// ==============================================================================
+// =============================================================================
+// ROUTING
+// This sets where the RESTful routes are defined
+// =============================================================================
 
-var mysql = require("mysql");
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_Controller.js");
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "root",
-    database: "movieplannerdb"
-});
-
-connection.connect(function (err) {
-    if (err) {
-        console.error("error connecting: " + err.stack);
-        return;
-    }
-
-    console.log("connected as id " + connection.threadId);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.use(routes);
 
 // =============================================================================
 // LISTENER
