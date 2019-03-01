@@ -10,27 +10,30 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
+router.get("/", function (req, res) {
 
-  burger.selectAll(function(data) {
-    var hbsObject = {
-      burger: data
+  burger.selectAll(function (data) {
+    var burgersObject = {
+      burgers: data
     };
-    // console.log(hbsObject);
-    res.render("index", hbsObject);
+    console.log(burgersObject);
+    res.render("index", burgersObject);
   });
 });
 
-// router.post("/api/burgers", function(req, res) {
-//   burger.create([
-//     "name", "sleepy"
-//   ], [
-//     req.body.name, req.body.sleepy
-//   ], function(result) {
-//     // Send back the ID of the new quote
-//     res.json({ id: result.insertId });
-//   });
-// });
+router.post("/api/burgers", function (req, res) {
+
+  burger.insertOne(req.body.burgerName, function (data) {
+
+    res.json({ id: data.insertId });
+
+    // var burgersObject = {
+    //   burger: data
+    // };
+    // console.log(burgersObject);
+    // res.render("index", burgersObject);
+  });
+});
 
 // router.put("/api/burgers/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;

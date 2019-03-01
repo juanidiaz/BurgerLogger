@@ -24,13 +24,15 @@ var orm = {
 
   // Return all the elements in the 'burgers_db.burgers' table
   insertOne: function (burgerName, cb) {
+
     var queryString = "INSERT INTO burgers_db.burgers (burger_name) VALUES (?);";
 
-    console.log(queryString);
-    connection.query(queryString, burgerName, function (err, result) {
+    //console.log(queryString);
+    connection.query(queryString, [ burgerName ], function (err, result) {
       if (err) throw err;
       console.log("Burger successfully added!");
-      res.end();
+      // console.log(result);
+      cb(result);
     });
   },
 
