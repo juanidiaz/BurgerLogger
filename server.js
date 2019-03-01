@@ -24,7 +24,6 @@ app.use(express.json());
 
 // Static directory
 app.use(express.static("public"));
-console.log(__dirname);
 //app.use(express.static(path.join(__dirname, 'public')));
 
 // ==============================================================================
