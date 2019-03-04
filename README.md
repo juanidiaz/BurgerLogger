@@ -38,7 +38,6 @@ The app, while looking very silly and simple uses SQL commands to handle the cre
     - HTML, CSS
     - Javascript and jQuery
     - Bootstrap
-    - AJAX - API
 
 - BACK END
     - node.js
