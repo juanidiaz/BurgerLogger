@@ -36,7 +36,7 @@ h3{
 }
 
 #footerNav{
-    background-color: rgba(141, 141, 141);
+    background-color: rgba(141, 141, 141, 0.623);
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
